@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="tabs style-1">
+        <button class="tab active">All</button>
+        <button class="tab">News</button>
+        <button class="tab">Trending</button>
+        <button class="tab">For you</button>
+        <button class="tab">Following</button>
+        <button class="tab">Subscribed</button>
+    </div>
+    <br>
+    <div class="tabs style-2">
+        <button class="tab active">All</button>
+        <button class="tab">News</button>
+        <button class="tab">Trending</button>
+        <button class="tab">For you</button>
+        <button class="tab">Following</button>
+        <button class="tab">Subscribed</button>
+    </div>
+    <br>
+    <div class="tabs style-3">
+        <button class="tab active">All <div class="tr"></div></button>
+        <button class="tab">News <div class="tr"></div></button>
+        <button class="tab">Trending <div class="tr"></div></button>
+        <button class="tab">For you <div class="tr"></div></button>
+        <button class="tab">Following <div class="tr"></div></button>
+        <button class="tab">Subscribed<div class="tr"></div></button>
+    </div>
+    <br>
+    <div class="tabs style-4">
+        <button class="tab active">All</button>
+        <button class="tab">News</button>
+        <button class="tab">Trending</button>
+        <button class="tab">For you</button>
+        <button class="tab">Following</button>
+        <button class="tab">Subscribed</button>
+    </div>
+    <br>
+    <div class="tabs style-5">
+        <button class="tab active">All</button>
+        <button class="tab">News</button>
+        <button class="tab">Trending</button>
+        <button class="tab">For you</button>
+        <button class="tab">Following</button>
+        <button class="tab">Subscribed</button>
+    </div>
+    <br>
+    <div class="tabs style-6">
+        <button class="tab active"> <span></span>All</button>
+        <button class="tab"><span>News</span></button>
+        <button class="tab"><span>Trending</span></button>
+        <button class="tab"><span>For you</span></button>
+        <button class="tab"><span>Following</span></button>
+        <button class="tab"><span>Subscribed</span></button>
+
+    </div>
+    <br>
+    <div class="tabs style-7">
+        <div class="box">
+            <button class="tab active">All</button>
+            <button class="tab">News</button>
+            <button class="tab">Trending</button>
+            <button class="tab">For you</button>
+            <button class="tab">Following</button>
+            <button class="tab">Subscribed</button>
+        </div>
+
+    </div>
+    <br>
+    <div class="tabs style-8">
+        <button class="tab active">All</button>
+        <button class="tab">News</button>
+        <button class="tab">Trending</button>
+        <button class="tab">For you</button>
+        <button class="tab">Following</button>
+        <button class="tab">Subscribed</button>
+        <div class="but"></div>
+    </div>
+    <br>
+    <script>
+        document.querySelectorAll(".tabs").forEach(group => {
+            const tabs = group.querySelectorAll(".tab");
+            const slider = group.querySelector(".slider");
+
+            function moveSlider(tab) {
+                if (!slider) return;
+                slider.style.width = tab.offsetWidth + "px";
+                slider.style.left = tab.offsetLeft + "px";
+            }
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    tabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+                    moveSlider(tab);
+                });
+            });
+
+            const active = group.querySelector(".tab.active");
+            if (active) moveSlider(active);
+        });
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>
