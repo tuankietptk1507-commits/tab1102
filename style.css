@@ -7,6 +7,7 @@
 body {
     background-color: rgb(226, 226, 226);
     overflow-x: scroll;
+
     .tabs {
         display: flex;
         gap: 10px;
@@ -30,7 +31,13 @@ body {
         display: flex;
         align-items: center;
         gap: 10px;
-        .ro{
+
+        img {
+            width: 14px;
+            height: 14px;
+        }
+
+        .ro {
             display: none;
         }
     }
@@ -96,10 +103,12 @@ body {
     .style-4 .active {
         color: #1264f1;
         border-bottom: 2px solid #0c44e0;
-        .ro{
+
+        .ro {
             display: block;
         }
-        .ch{
+
+        .ch {
             display: none;
         }
     }
@@ -114,10 +123,12 @@ body {
     .style-5 .active {
         background: linear-gradient(120deg, #d5cfff, #9be6ff);
         color: #2280f4;
-        .ro{
+
+        .ro {
             display: block;
         }
-        .ch{
+
+        .ch {
             display: none;
         }
     }
@@ -131,13 +142,16 @@ body {
     .style-6 .active {
         color: #1264f1;
         border-bottom: 2px solid #0c44e0;
-        .ro{
+
+        .ro {
             display: block;
         }
-        .ch{
+
+        .ch {
             display: none;
         }
     }
+
     .style-7 .box {
         padding: 5px 10px;
         background-color: rgb(243, 243, 243);
@@ -158,10 +172,12 @@ body {
     .style-7 .box .active {
         background-color: #ffffff;
         color: #1b5dce;
-        .ro{
+
+        .ro {
             display: block;
         }
-        .ch{
+
+        .ch {
             display: none;
         }
     }
@@ -184,15 +200,18 @@ body {
     .style-8 .tab {
         border-radius: 5px;
         background-color: rgb(243, 243, 243);
-        
+
     }
-    .style-8 .active{
+
+    .style-8 .active {
         background-color: #ffffff;
         color: #1b5dce;
-        .ro{
+
+        .ro {
             display: block;
         }
-        .ch{
+
+        .ch {
             display: none;
         }
     }
