@@ -22,11 +22,16 @@ body {
         width: 900px;
         border-collapse: collapse;
 
+        .i {
+            position: absolute;
+            left: 50px;
+        }
     }
 
     .tabs {
         position: relative;
     }
+
     .tab {
         padding: 10px 25px;
         border: none;
@@ -34,6 +39,7 @@ body {
         display: flex;
         align-items: center;
         gap: 10px;
+        position: relative;
 
         img {
             width: 14px;
@@ -53,7 +59,24 @@ body {
 
     .style-1 .active {
         color: #1f5be7;
+        position: relative;
+        z-index: 1;
+        background-color: transparent;
+    }
+
+    .style-1::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 10px;
+        border-radius: 30px;
+        left: var(--left);
+        width: var(--width);
+        height: calc(100% - 20px);
         background-color: rgb(243, 243, 243);
+        transition:
+            left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .style-2 .tab {
@@ -63,35 +86,49 @@ body {
     }
 
     .style-2 .active {
-        background: linear-gradient(120deg, #6bbcfe, #0c44e0);
+        position: relative;
+        z-index: 1;
+        background-color: transparent;
         color: #ffffff;
     }
 
-    .style-3 {}
+    .style-2::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 10px;
+        border-radius: 30px;
+        left: var(--left);
+        width: var(--width);
+        height: calc(100% - 20px);
+        background: linear-gradient(120deg, #6bbcfe, #0c44e0);
+        transition:
+            left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
 
     .style-3 .tab {
-
         position: relative;
-    }
-
-    .style-3 .tab .tr {
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background-color: #2488fa;
-        bottom: 0;
-        left: 48.5%;
-        display: none;
-
-    }
-
-    .style-3 .active .tr {
-        display: block;
     }
 
     .style-3 .active {
         color: #2488fa;
+    }
+
+    .style-3::after {
+        content: "";
+        position: absolute;
+        bottom: 10px;
+        left: calc(var(--left) + var(--width) / 2 - 8px);
+        width: var(--width);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #476fdd;
+        transition:
+            left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .style-4 .tab {
@@ -105,7 +142,7 @@ body {
 
     .style-4 .active {
         color: #1264f1;
-        border-bottom: 2px solid #0c44e0;
+        /* border-bottom: 2px solid #0c44e0; */
 
         .ro {
             display: block;
@@ -116,6 +153,19 @@ body {
         }
     }
 
+    .style-4::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--left);
+        width: var(--width);
+        height: 2px;
+        background-color: #0c44e0;
+        transition:
+            left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
     .style-5 .tab {
         border-radius: 6px;
 
@@ -124,7 +174,8 @@ body {
     }
 
     .style-5 .active {
-        background: linear-gradient(120deg, #d5cfff, #9be6ff);
+        z-index: 1;
+        background-color: transparent;
         color: #2280f4;
 
         .ro {
@@ -136,6 +187,21 @@ body {
         }
     }
 
+    .style-5::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 10px;
+        border-radius: 30px;
+        left: var(--left);
+        width: var(--width);
+        height: calc(100% - 20px);
+        background: linear-gradient(120deg, #d5cfff, #9be6ff);
+        transition:
+            left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
     .style-6 .tab {
         display: flex;
         align-items: center;
@@ -144,7 +210,7 @@ body {
 
     .style-6 .active {
         color: #1264f1;
-        border-bottom: 2px solid #0c44e0;
+        /* border-bottom: 2px solid #0c44e0; */
 
         .ro {
             display: block;
@@ -153,6 +219,19 @@ body {
         .ch {
             display: none;
         }
+    }
+
+    .style-6::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--left);
+        width: var(--width);
+        height: 2px;
+        background-color: #0c44e0;
+        transition:
+            left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .style-7 .box {
@@ -174,7 +253,8 @@ body {
     }
 
     .style-7 .box .active {
-        background-color: #ffffff;
+        z-index: 1;
+        background-color: transparent;
         color: #1b5dce;
 
         .ro {
@@ -184,6 +264,21 @@ body {
         .ch {
             display: none;
         }
+    }
+
+    .style-7::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 12px;
+        border-radius: 5px;
+        left: var(--left);
+        width: var(--width);
+        height: calc(100% - 24px);
+        background-color: #ffffff;
+        transition:
+            left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .style-8 {
@@ -211,8 +306,9 @@ body {
     }
 
     .style-8 .active {
-        background-color: #ffffff;
         color: #1b5dce;
+        background-color: transparent;
+        z-index: 1;
 
         .ro {
             display: block;
@@ -222,4 +318,19 @@ body {
             display: none;
         }
     }
+
+    .style-8::after {
+        content: "";
+        position: absolute;
+        bottom: 10px;
+        left: var(--left);
+        width: var(--width);
+        height: calc(100% - 20px);
+        border-radius: 5px;
+        background-color: #ffffff;
+        transition:
+            left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
 }

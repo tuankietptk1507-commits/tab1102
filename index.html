@@ -10,7 +10,7 @@
 
 <body>
     <div class="tabs style-1">
-        <img src="./img/menu (1).svg" alt="">
+        <img src="./img/menu (1).svg" alt="" class="i">
         <button class="tab active">All</button>
         <button class="tab">News</button>
         <button class="tab">Trending</button>
@@ -20,7 +20,7 @@
     </div>
     <br>
     <div class="tabs style-2">
-        <img src="./img/menu (1).svg" alt="">
+        <img src="./img/menu (1).svg" alt="" class="i">
         <button class="tab active">All</button>
         <button class="tab">News</button>
         <button class="tab">Trending</button>
@@ -30,7 +30,7 @@
     </div>
     <br>
     <div class="tabs style-3">
-        <img src="./img/menu (1).svg" alt="">
+        <img src="./img/menu (1).svg" alt="" class="i">
         <button class="tab active">All <div class="tr"></div></button>
         <button class="tab">News <div class="tr"></div></button>
         <button class="tab">Trending <div class="tr"></div></button>
@@ -91,26 +91,32 @@
     <br>
     <script>
         document.querySelectorAll(".tabs").forEach(group => {
-            const tabs = group.querySelectorAll(".tab");
-            const slider = group.querySelector(".slider");
+    const tabs = group.querySelectorAll(".tab");
 
-            function moveSlider(tab) {
-                if (!slider) return;
-                slider.style.width = tab.offsetWidth + "px";
-                slider.style.left = tab.offsetLeft + "px";
-            }
+    function moveActive(tab) {
+        const left = tab.offsetLeft - group.scrollLeft;
 
-            tabs.forEach(tab => {
-                tab.addEventListener("click", () => {
-                    tabs.forEach(t => t.classList.remove("active"));
-                    tab.classList.add("active");
-                    moveSlider(tab);
-                });
-            });
+        group.style.setProperty("--left", left + "px");
+        group.style.setProperty("--width", tab.offsetWidth + "px");
+    }
 
-            const active = group.querySelector(".tab.active");
-            if (active) moveSlider(active);
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+            moveActive(tab);
         });
+    });
+
+    const active = group.querySelector(".tab.active");
+    if (active) moveActive(active);
+
+    /* khi scroll ngang vẫn bám đúng tab */
+    group.addEventListener("scroll", () => {
+        const activeTab = group.querySelector(".tab.active");
+        if (activeTab) moveActive(activeTab);
+    });
+});
     </script>
 </body>
 
