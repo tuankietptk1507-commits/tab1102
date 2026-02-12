@@ -92,14 +92,11 @@
     <script>
         document.querySelectorAll(".tabs").forEach(group => {
     const tabs = group.querySelectorAll(".tab");
-
     function moveActive(tab) {
         const left = tab.offsetLeft - group.scrollLeft;
-
         group.style.setProperty("--left", left + "px");
         group.style.setProperty("--width", tab.offsetWidth + "px");
     }
-
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
             tabs.forEach(t => t.classList.remove("active"));
@@ -107,11 +104,8 @@
             moveActive(tab);
         });
     });
-
     const active = group.querySelector(".tab.active");
     if (active) moveActive(active);
-
-    /* khi scroll ngang vẫn bám đúng tab */
     group.addEventListener("scroll", () => {
         const activeTab = group.querySelector(".tab.active");
         if (activeTab) moveActive(activeTab);
