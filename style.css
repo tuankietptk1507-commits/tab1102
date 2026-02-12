@@ -5,27 +5,40 @@
 }
 
 body {
-    background-color: rgb(226, 226, 226);
+    background-color: rgba(122, 208, 254, 0.205);
     overflow-x: scroll;
+    padding-top: 20px;
 
     .tabs {
         display: flex;
         gap: 10px;
         margin: 0 auto;
         width: fit-content;
-        padding: 8px 40px;
+        padding: 8px 10px;
         background-color: rgb(255, 255, 255);
         box-shadow: 0px 2px 4px -2px #0000001A;
         box-shadow: 0px 4px 6px -1px #0000001A;
         border-radius: 10px;
         justify-content: center;
-        width: 900px;
+        width: 820px;
         border-collapse: collapse;
 
-        .i {
+        .boc {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #a3d2fc70;
             position: absolute;
-            left: 50px;
+            left: 40px;
+            border-radius: 50%;
+            .i {
+                width: 20px;
+                height: 20px;
+            }
         }
+
     }
 
     .tabs {
@@ -38,7 +51,7 @@ body {
         background-color: rgb(255, 255, 255);
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         position: relative;
 
         img {
@@ -53,12 +66,13 @@ body {
 
     .style-1 .tab {
         border-radius: 30px;
-
+        color: #000000ba;
+        font-weight: 500;
 
     }
 
     .style-1 .active {
-        color: #1f5be7;
+        color: #0e5db7;
         position: relative;
         z-index: 1;
         background-color: transparent;
@@ -73,7 +87,7 @@ body {
         left: var(--left);
         width: var(--width);
         height: calc(100% - 20px);
-        background-color: rgb(243, 243, 243);
+        background-color: rgba(175, 223, 253, 0.533);
         transition:
             left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
             width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -81,7 +95,8 @@ body {
 
     .style-2 .tab {
         border-radius: 30px;
-
+         color: #000000ba;
+        font-weight: 500;
 
     }
 
@@ -101,7 +116,7 @@ body {
         left: var(--left);
         width: var(--width);
         height: calc(100% - 20px);
-        background: linear-gradient(120deg, #6bbcfe, #0c44e0);
+        background-color: #1f7ce7bb;
         transition:
             left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
             width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -110,22 +125,24 @@ body {
 
     .style-3 .tab {
         position: relative;
+         color: #000000ba;
+        font-weight: 500;
     }
 
     .style-3 .active {
-        color: #2488fa;
+        color: #1f7ce7da;
     }
 
     .style-3::after {
         content: "";
         position: absolute;
         bottom: 10px;
-        left: calc(var(--left) + var(--width) / 2 - 8px);
+        left: calc(var(--left) + var(--width) / 2 - 2.5px);
         width: var(--width);
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        background-color: #476fdd;
+        background-color: #1f7ce7da;
         transition:
             left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
             width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -137,11 +154,12 @@ body {
         flex-direction: column;
         align-items: center;
 
-
+         color: #000000ba;
+        font-weight: 500;
     }
 
     .style-4 .active {
-        color: #1264f1;
+       color: #0e5db7;
         /* border-bottom: 2px solid #0c44e0; */
 
         .ro {
@@ -160,7 +178,7 @@ body {
         left: var(--left);
         width: var(--width);
         height: 2px;
-        background-color: #0c44e0;
+        background-color: #1f7ce7da;
         transition:
             left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
             width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -169,14 +187,15 @@ body {
     .style-5 .tab {
         border-radius: 6px;
 
-
+         color: #000000ba;
+        font-weight: 500;
 
     }
 
     .style-5 .active {
         z-index: 1;
         background-color: transparent;
-        color: #2280f4;
+       color: #0e5db7;
 
         .ro {
             display: block;
@@ -196,7 +215,7 @@ body {
         left: var(--left);
         width: var(--width);
         height: calc(100% - 20px);
-        background: linear-gradient(120deg, #d5cfff, #9be6ff);
+        background-color: rgba(175, 223, 253, 0.533);
         transition:
             left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
             width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -205,11 +224,13 @@ body {
     .style-6 .tab {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
+         color: #000000ba;
+        font-weight: 500;
     }
 
     .style-6 .active {
-        color: #1264f1;
+       color: #0e5db7;
         /* border-bottom: 2px solid #0c44e0; */
 
         .ro {
@@ -228,7 +249,7 @@ body {
         left: var(--left);
         width: var(--width);
         height: 2px;
-        background-color: #0c44e0;
+        background-color: #1f7ce7da;
         transition:
             left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
             width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -236,26 +257,27 @@ body {
 
     .style-7 .box {
         padding: 5px 10px;
-        background-color: rgb(243, 243, 243);
+         background-color: rgba(122, 208, 254, 0.288);
         border-radius: 5px;
         display: flex;
         gap: 10px;
     }
 
     .style-7 .box .tab {
-        background-color: rgb(243, 243, 243);
+        background-color:transparent;
         border-radius: 5px;
         display: flex;
         align-items: center;
         gap: 10px;
-
+         color: #000000ba;
+        font-weight: 500;
 
     }
 
     .style-7 .box .active {
         z-index: 1;
         background-color: transparent;
-        color: #1b5dce;
+        color: #0e5db7;
 
         .ro {
             display: block;
@@ -276,6 +298,8 @@ body {
         width: var(--width);
         height: calc(100% - 24px);
         background-color: #ffffff;
+         box-shadow: 0px 2px 4px -2px #0000001A;
+        box-shadow: 0px 4px 6px -1px #0000001A;
         transition:
             left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
             width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -284,8 +308,8 @@ body {
     .style-8 {
         position: relative;
         overflow: hidden;
-        background-color: rgb(243, 243, 243);
-
+       background-color: #d9f2ff;
+        border: 5px solid #ffffff;
     }
 
     .style-8 .but {
@@ -299,14 +323,16 @@ body {
 
     .style-8 .tab {
         border-radius: 5px;
-        background-color: rgb(243, 243, 243);
+        background-color: transparent;
         position: relative;
         z-index: 1;
-
+        
+         color: #000000ba;
+        font-weight: 500;
     }
 
     .style-8 .active {
-        color: #1b5dce;
+       color: #0e5db7;
         background-color: transparent;
         z-index: 1;
 
@@ -328,6 +354,8 @@ body {
         height: calc(100% - 20px);
         border-radius: 5px;
         background-color: #ffffff;
+         box-shadow: 0px 2px 4px -2px #0000001A;
+        box-shadow: 0px 4px 6px -1px #0000001A;
         transition:
             left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
             width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
